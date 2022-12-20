@@ -30,7 +30,7 @@ class User:Codable{
     }
     
     
-    func addModule(config: [String: String], module: String, position: Position, size: Size){
-        self.module.append(Module(config: config, module: module, position: position, size: size))
+    func addModule(config: [String: String], module: String, name: String, position: Position, size: Size){
+        self.module.append(Module(config: config, module: module,name: name, position: position, size: size))
     }
 }

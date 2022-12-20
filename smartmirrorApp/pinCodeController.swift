@@ -22,9 +22,14 @@ class pinCodeController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "segueToTabController" else { return }
-
-        print("teste")
+        if (segue.identifier == "segueToTabController") {
+            let secondView = segue.destination as! UITabBarControllerMainViewController
+            secondView.user = user
+            //let thirdView = secondView.customizableViewControllers![0] as! UINavigationController
+            //let fourthView = thirdView.visibleViewController as! UserModulesTableViewController
+            //let object = sender as! User
+            //fourthView.user = user
+        }
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {

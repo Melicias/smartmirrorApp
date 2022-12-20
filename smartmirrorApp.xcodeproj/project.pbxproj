@@ -21,6 +21,13 @@
 		0417D08D29095D6D008233DB /* createNewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0417D08C29095D6D008233DB /* createNewUserViewController.swift */; };
 		0417D08F2909AB3D008233DB /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0417D08E2909AB3D008233DB /* UsersTableViewController.swift */; };
 		0417D0912909ADCA008233DB /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0417D0902909ADCA008233DB /* UserTableViewCell.swift */; };
+		04353BEF292C0A7100226EED /* UserModulesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04353BEE292C0A7100226EED /* UserModulesTableViewController.swift */; };
+		049CC7832938FFA500772DF2 /* UITabBarControllerMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CC7822938FFA500772DF2 /* UITabBarControllerMainViewController.swift */; };
+		049CC78529390EE100772DF2 /* UserModulesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CC78429390EE100772DF2 /* UserModulesViewCell.swift */; };
+		04CAC5672942718600E0E9D6 /* ModulesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CAC5662942718600E0E9D6 /* ModulesViewCell.swift */; };
+		04CAC569294271CF00E0E9D6 /* ModulesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CAC568294271CF00E0E9D6 /* ModulesTableViewController.swift */; };
+		04CAC56B2946860F00E0E9D6 /* SelfieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CAC56A2946860F00E0E9D6 /* SelfieViewController.swift */; };
+		04CAC56E2950D99100E0E9D6 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 04CAC56D2950D99100E0E9D6 /* FirebaseStorage */; };
 		04DDD621290A8ECA00D28F2A /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD620290A8ECA00D28F2A /* Module.swift */; };
 		04DDD623290A8F8500D28F2A /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD622290A8F8500D28F2A /* Position.swift */; };
 		04DDD625290A8FCA00D28F2A /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD624290A8FCA00D28F2A /* Size.swift */; };
@@ -42,6 +49,12 @@
 		0417D08C29095D6D008233DB /* createNewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createNewUserViewController.swift; sourceTree = "<group>"; };
 		0417D08E2909AB3D008233DB /* UsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
 		0417D0902909ADCA008233DB /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		04353BEE292C0A7100226EED /* UserModulesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModulesTableViewController.swift; sourceTree = "<group>"; };
+		049CC7822938FFA500772DF2 /* UITabBarControllerMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarControllerMainViewController.swift; sourceTree = "<group>"; };
+		049CC78429390EE100772DF2 /* UserModulesViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModulesViewCell.swift; sourceTree = "<group>"; };
+		04CAC5662942718600E0E9D6 /* ModulesViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModulesViewCell.swift; sourceTree = "<group>"; };
+		04CAC568294271CF00E0E9D6 /* ModulesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModulesTableViewController.swift; sourceTree = "<group>"; };
+		04CAC56A2946860F00E0E9D6 /* SelfieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieViewController.swift; sourceTree = "<group>"; };
 		04DDD620290A8ECA00D28F2A /* Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
 		04DDD622290A8F8500D28F2A /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
 		04DDD624290A8FCA00D28F2A /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
@@ -55,6 +68,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0417D08429046D6C008233DB /* FirebaseFirestore in Frameworks */,
+				04CAC56E2950D99100E0E9D6 /* FirebaseStorage in Frameworks */,
 				0417D08629046D6C008233DB /* FirebaseFirestoreCombine-Community in Frameworks */,
 				0417D08829046D6C008233DB /* FirebaseFirestoreSwift in Frameworks */,
 			);
@@ -68,6 +82,7 @@
 			children = (
 				0417D06629007365008233DB /* smartmirrorApp */,
 				0417D06529007365008233DB /* Products */,
+				04CAC56C2950D99100E0E9D6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,7 +108,11 @@
 				0417D08029046A51008233DB /* GoogleService-Info.plist */,
 				0417D08C29095D6D008233DB /* createNewUserViewController.swift */,
 				0417D08E2909AB3D008233DB /* UsersTableViewController.swift */,
+				04353BEE292C0A7100226EED /* UserModulesTableViewController.swift */,
 				04DDD628290AF88500D28F2A /* pinCodeController.swift */,
+				049CC7822938FFA500772DF2 /* UITabBarControllerMainViewController.swift */,
+				04CAC568294271CF00E0E9D6 /* ModulesTableViewController.swift */,
+				04CAC56A2946860F00E0E9D6 /* SelfieViewController.swift */,
 			);
 			path = smartmirrorApp;
 			sourceTree = "<group>";
@@ -115,8 +134,17 @@
 			children = (
 				0417D08A2908329F008233DB /* costumLoginButtons.swift */,
 				0417D0902909ADCA008233DB /* UserTableViewCell.swift */,
+				049CC78429390EE100772DF2 /* UserModulesViewCell.swift */,
+				04CAC5662942718600E0E9D6 /* ModulesViewCell.swift */,
 			);
 			path = CostumSwiftui;
+			sourceTree = "<group>";
+		};
+		04CAC56C2950D99100E0E9D6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +167,7 @@
 				0417D08329046D6C008233DB /* FirebaseFirestore */,
 				0417D08529046D6C008233DB /* FirebaseFirestoreCombine-Community */,
 				0417D08729046D6C008233DB /* FirebaseFirestoreSwift */,
+				04CAC56D2950D99100E0E9D6 /* FirebaseStorage */,
 			);
 			productName = smartmirrorApp;
 			productReference = 0417D06429007365008233DB /* smartmirrorApp.app */;
@@ -199,18 +228,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04CAC56B2946860F00E0E9D6 /* SelfieViewController.swift in Sources */,
 				0417D08D29095D6D008233DB /* createNewUserViewController.swift in Sources */,
 				0417D07D2902FEEF008233DB /* User.swift in Sources */,
 				0417D06829007365008233DB /* AppDelegate.swift in Sources */,
 				0417D0912909ADCA008233DB /* UserTableViewCell.swift in Sources */,
+				04CAC5672942718600E0E9D6 /* ModulesViewCell.swift in Sources */,
 				0417D08B2908329F008233DB /* costumLoginButtons.swift in Sources */,
 				04DDD621290A8ECA00D28F2A /* Module.swift in Sources */,
 				04DDD625290A8FCA00D28F2A /* Size.swift in Sources */,
 				04DDD629290AF88500D28F2A /* pinCodeController.swift in Sources */,
 				0417D08F2909AB3D008233DB /* UsersTableViewController.swift in Sources */,
+				04CAC569294271CF00E0E9D6 /* ModulesTableViewController.swift in Sources */,
+				049CC7832938FFA500772DF2 /* UITabBarControllerMainViewController.swift in Sources */,
+				04353BEF292C0A7100226EED /* UserModulesTableViewController.swift in Sources */,
 				04DDD62B290C17C200D28F2A /* Encrypt.swift in Sources */,
 				0417D06A29007365008233DB /* SceneDelegate.swift in Sources */,
 				04DDD623290A8F8500D28F2A /* Position.swift in Sources */,
+				049CC78529390EE100772DF2 /* UserModulesViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +392,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RNK5CF7K75;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = smartmirrorApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -384,6 +420,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RNK5CF7K75;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = smartmirrorApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -453,6 +490,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0417D08229046D6C008233DB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestoreSwift;
+		};
+		04CAC56D2950D99100E0E9D6 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0417D08229046D6C008233DB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
