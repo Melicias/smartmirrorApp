@@ -13,6 +13,15 @@ class Module:Codable{
     var name: String
     var position: Position
     var size: Size
+    var dataToPass : [String:Any] {
+        return [
+            "config" : self.config,
+            "module" : self.module,
+            "name" : self.name,
+            "position" : self.position.dataToPass,
+            "size" : self.size.dataToPass
+        ]
+    }
     
     init(config: [String: String], module: String, name:String, position: Position, size: Size) {
         self.config = config

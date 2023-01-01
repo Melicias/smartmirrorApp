@@ -403,11 +403,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ModulesCell" rowHeight="117" id="TYV-Bf-Pav" customClass="ModulesViewCell" customModule="smartmirrorApp" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ModulesCell" rowHeight="117" id="TYV-Bf-Pav" customClass="ModulesViewCell" customModule="smartmirrorApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="390" height="117"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TYV-Bf-Pav" id="rXZ-LK-cFG">
-                                    <rect key="frame" x="0.0" y="0.0" width="390" height="117"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="359.66666666666669" height="117"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Odf-Zw-Waw">
@@ -460,14 +460,71 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="New" image="plus.square.fill.on.square.fill" catalog="system" selectedImage="plus.square.fill.on.square.fill" id="bdQ-Ii-oKc"/>
+                    <navigationItem key="navigationItem" id="weR-0w-0yg"/>
                     <connections>
                         <outlet property="tableView" destination="qHJ-Rr-66b" id="1bg-Zn-vkf"/>
                         <outlet property="tableViewModules" destination="qHJ-Rr-66b" id="gqg-Za-1Ly"/>
+                        <segue destination="W4r-2J-sQk" kind="show" identifier="segueToAddModule" id="0a2-z0-sRJ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0fU-gf-83L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2588" y="-751"/>
+        </scene>
+        <!--AddModule-->
+        <scene sceneID="lJW-ky-ax5">
+            <objects>
+                <tableViewController id="W4r-2J-sQk" customClass="AddNewModuleTableViewController" customModule="smartmirrorApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="kLl-La-jtP">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FieldToAddModule" id="cUd-jf-Hbc" customClass="FieldToAddModuleViewCell" customModule="smartmirrorApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="390" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cUd-jf-Hbc" id="RHN-bE-iLg">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tsg-CF-s0Z">
+                                            <rect key="frame" x="20" y="11" width="101" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1sT-UW-ctH">
+                                            <rect key="frame" x="129" y="4" width="241" height="34"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="label" destination="tsg-CF-s0Z" id="pOf-dz-bfi"/>
+                                    <outlet property="textfield" destination="1sT-UW-ctH" id="ULa-vo-1H2"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="W4r-2J-sQk" id="Vv9-kQ-8F4"/>
+                            <outlet property="delegate" destination="W4r-2J-sQk" id="Q7p-LO-ea3"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="AddModule" id="CtV-qB-SY2">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="M1w-uw-795">
+                            <connections>
+                                <segue destination="HnY-TM-6bC" kind="unwind" identifier="unwindFromAddModule" unwindAction="unwindToAllModules:" id="qnb-QP-Oat"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G9G-YZ-OUZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="HnY-TM-6bC" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3407.6923076923076" y="-751.42180094786727"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

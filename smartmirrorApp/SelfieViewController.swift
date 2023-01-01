@@ -30,6 +30,11 @@ class SelfieViewController: UIViewController {
         saveButton.backgroundColor = .systemBlue
         saveButton.setTitleColor(.white,for: .normal)
         saveButton.setTitle("Save selfie", for: .normal)
+        
+        //mostrar a imagem caso exista
+        if(!(user.imageFRurl?.isEmpty ?? true)){
+            ImageView.loadFrom(URLAddress: user.imageFRurl!)
+        }
     }
     
     @IBAction func didTapButton(){
@@ -55,7 +60,6 @@ class SelfieViewController: UIViewController {
                                                                         metadata: nil,
                                                                         completion: { _, error in
             guard error == nil else{
-                print(error)
                 print("failed to upload")
                 return
             }
@@ -64,6 +68,25 @@ class SelfieViewController: UIViewController {
                     return
                 }
                 let urlString = url.absoluteString
+                //guardar este url na firebase
+                
+                let db = Firestore.firestore()
+                db.collection("user")
+                    .whereField(FieldPath.documentID(), isEqualTo: self.user.id)
+                    .getDocuments() { (querySnapshot, err) in
+                        if let err = err {
+                            print(err)
+                        } else if querySnapshot!.documents.count != 1 {
+                            // Perhaps this is an error for you?
+                        } else {
+                            let document = querySnapshot!.documents.first
+                            document?.reference.updateData([
+                                "imageFRurl": urlString
+                            ])
+                        }
+                    }
+                
+                
                 print(urlString)
             })
         })
@@ -95,5 +118,23 @@ extension SelfieViewController: UIImagePickerControllerDelegate, UINavigationCon
         }
         //temos uma imagem válida
         ImageView.image = image
+    }
+}
+
+
+
+extension UIImageView {
+    func loadFrom(URLAddress: String) {
+        guard let url = URL(string: URLAddress) else {
+            return
+        }
+        
+        DispatchQueue.main.async { [weak self] in
+            if let imageData = try? Data(contentsOf: url) {
+                if let loadedImage = UIImage(data: imageData) {
+                        self?.image = loadedImage
+                }
+            }
+        }
     }
 }

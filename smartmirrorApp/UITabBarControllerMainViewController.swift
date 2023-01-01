@@ -27,6 +27,7 @@ class UITabBarControllerMainViewController: UITabBarController {
         
         let modu = self.viewControllers![1] as! ModulesTableViewController
         modu.modules = modules
+        modu.user = user
         
         let userpic = self.viewControllers![2] as! SelfieViewController
         userpic.user = user

@@ -10,6 +10,7 @@ import UIKit
 class ModulesTableViewController: UITableViewController {
 
     var modules: Array<Module> = Array()
+    var user: User!
     
     @IBOutlet var tableViewModules: UITableView!
     
@@ -19,6 +20,9 @@ class ModulesTableViewController: UITableViewController {
         
         tableView.rowHeight = 120.0
         tableView.estimatedRowHeight = 120.0
+        
+        self.tableView.delegate = self
+        self.tableView.reloadData()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -27,7 +31,10 @@ class ModulesTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
-    // MARK: - Table view data source
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -55,6 +62,23 @@ class ModulesTableViewController: UITableViewController {
 
         //Step 4: Return cell
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "segueToAddModule", sender: modules[indexPath.row])
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "segueToAddModule") {
+            let secondView = segue.destination as! AddNewModuleTableViewController
+            let object = sender as! Module
+            secondView.module = object
+            secondView.user = user
+        }
+    }
+    
+    @IBAction func unwindToAllModules( _ seg: UIStoryboardSegue) {
+        
     }
 
     /*

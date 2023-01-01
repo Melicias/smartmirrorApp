@@ -14,6 +14,7 @@ class User:Codable{
     var pinCode: String
     var module: Array<Module>;
     var img: String?
+    var imageFRurl: String?
     var dataToPass : [String:Any] {
         return [
             "name" : self.name,

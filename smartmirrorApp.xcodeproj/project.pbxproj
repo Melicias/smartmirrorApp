@@ -33,6 +33,8 @@
 		04DDD625290A8FCA00D28F2A /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD624290A8FCA00D28F2A /* Size.swift */; };
 		04DDD629290AF88500D28F2A /* pinCodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD628290AF88500D28F2A /* pinCodeController.swift */; };
 		04DDD62B290C17C200D28F2A /* Encrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD62A290C17C200D28F2A /* Encrypt.swift */; };
+		04FAF0E22958C9C300E6E721 /* AddNewModuleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FAF0E12958C9C300E6E721 /* AddNewModuleTableViewController.swift */; };
+		04FAF0EA295A47A500E6E721 /* FieldToAddModuleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FAF0E9295A47A500E6E721 /* FieldToAddModuleViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,8 @@
 		04DDD624290A8FCA00D28F2A /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
 		04DDD628290AF88500D28F2A /* pinCodeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pinCodeController.swift; sourceTree = "<group>"; };
 		04DDD62A290C17C200D28F2A /* Encrypt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encrypt.swift; sourceTree = "<group>"; };
+		04FAF0E12958C9C300E6E721 /* AddNewModuleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewModuleTableViewController.swift; sourceTree = "<group>"; };
+		04FAF0E9295A47A500E6E721 /* FieldToAddModuleViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldToAddModuleViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,7 @@
 				049CC7822938FFA500772DF2 /* UITabBarControllerMainViewController.swift */,
 				04CAC568294271CF00E0E9D6 /* ModulesTableViewController.swift */,
 				04CAC56A2946860F00E0E9D6 /* SelfieViewController.swift */,
+				04FAF0E12958C9C300E6E721 /* AddNewModuleTableViewController.swift */,
 			);
 			path = smartmirrorApp;
 			sourceTree = "<group>";
@@ -136,6 +141,7 @@
 				0417D0902909ADCA008233DB /* UserTableViewCell.swift */,
 				049CC78429390EE100772DF2 /* UserModulesViewCell.swift */,
 				04CAC5662942718600E0E9D6 /* ModulesViewCell.swift */,
+				04FAF0E9295A47A500E6E721 /* FieldToAddModuleViewCell.swift */,
 			);
 			path = CostumSwiftui;
 			sourceTree = "<group>";
@@ -232,6 +238,7 @@
 				0417D08D29095D6D008233DB /* createNewUserViewController.swift in Sources */,
 				0417D07D2902FEEF008233DB /* User.swift in Sources */,
 				0417D06829007365008233DB /* AppDelegate.swift in Sources */,
+				04FAF0E22958C9C300E6E721 /* AddNewModuleTableViewController.swift in Sources */,
 				0417D0912909ADCA008233DB /* UserTableViewCell.swift in Sources */,
 				04CAC5672942718600E0E9D6 /* ModulesViewCell.swift in Sources */,
 				0417D08B2908329F008233DB /* costumLoginButtons.swift in Sources */,
@@ -245,6 +252,7 @@
 				04DDD62B290C17C200D28F2A /* Encrypt.swift in Sources */,
 				0417D06A29007365008233DB /* SceneDelegate.swift in Sources */,
 				04DDD623290A8F8500D28F2A /* Position.swift in Sources */,
+				04FAF0EA295A47A500E6E721 /* FieldToAddModuleViewCell.swift in Sources */,
 				049CC78529390EE100772DF2 /* UserModulesViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
