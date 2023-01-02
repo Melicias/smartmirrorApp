@@ -27,7 +27,6 @@
 		04CAC5672942718600E0E9D6 /* ModulesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CAC5662942718600E0E9D6 /* ModulesViewCell.swift */; };
 		04CAC569294271CF00E0E9D6 /* ModulesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CAC568294271CF00E0E9D6 /* ModulesTableViewController.swift */; };
 		04CAC56B2946860F00E0E9D6 /* SelfieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CAC56A2946860F00E0E9D6 /* SelfieViewController.swift */; };
-		04CAC56E2950D99100E0E9D6 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 04CAC56D2950D99100E0E9D6 /* FirebaseStorage */; };
 		04DDD621290A8ECA00D28F2A /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD620290A8ECA00D28F2A /* Module.swift */; };
 		04DDD623290A8F8500D28F2A /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD622290A8F8500D28F2A /* Position.swift */; };
 		04DDD625290A8FCA00D28F2A /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD624290A8FCA00D28F2A /* Size.swift */; };
@@ -35,6 +34,7 @@
 		04DDD62B290C17C200D28F2A /* Encrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD62A290C17C200D28F2A /* Encrypt.swift */; };
 		04FAF0E22958C9C300E6E721 /* AddNewModuleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FAF0E12958C9C300E6E721 /* AddNewModuleTableViewController.swift */; };
 		04FAF0EA295A47A500E6E721 /* FieldToAddModuleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FAF0E9295A47A500E6E721 /* FieldToAddModuleViewCell.swift */; };
+		2CD191202962374300925150 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 2CD1911F2962374300925150 /* FirebaseStorage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +64,7 @@
 		04DDD62A290C17C200D28F2A /* Encrypt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encrypt.swift; sourceTree = "<group>"; };
 		04FAF0E12958C9C300E6E721 /* AddNewModuleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewModuleTableViewController.swift; sourceTree = "<group>"; };
 		04FAF0E9295A47A500E6E721 /* FieldToAddModuleViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldToAddModuleViewCell.swift; sourceTree = "<group>"; };
+		2C7437EE29623344002A7392 /* smartmirrorApp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = smartmirrorApp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +73,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0417D08429046D6C008233DB /* FirebaseFirestore in Frameworks */,
-				04CAC56E2950D99100E0E9D6 /* FirebaseStorage in Frameworks */,
+				2CD191202962374300925150 /* FirebaseStorage in Frameworks */,
 				0417D08629046D6C008233DB /* FirebaseFirestoreCombine-Community in Frameworks */,
 				0417D08829046D6C008233DB /* FirebaseFirestoreSwift in Frameworks */,
 			);
@@ -149,6 +150,7 @@
 		04CAC56C2950D99100E0E9D6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2C7437EE29623344002A7392 /* smartmirrorApp */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -173,7 +175,7 @@
 				0417D08329046D6C008233DB /* FirebaseFirestore */,
 				0417D08529046D6C008233DB /* FirebaseFirestoreCombine-Community */,
 				0417D08729046D6C008233DB /* FirebaseFirestoreSwift */,
-				04CAC56D2950D99100E0E9D6 /* FirebaseStorage */,
+				2CD1911F2962374300925150 /* FirebaseStorage */,
 			);
 			productName = smartmirrorApp;
 			productReference = 0417D06429007365008233DB /* smartmirrorApp.app */;
@@ -499,7 +501,7 @@
 			package = 0417D08229046D6C008233DB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestoreSwift;
 		};
-		04CAC56D2950D99100E0E9D6 /* FirebaseStorage */ = {
+		2CD1911F2962374300925150 /* FirebaseStorage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0417D08229046D6C008233DB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;

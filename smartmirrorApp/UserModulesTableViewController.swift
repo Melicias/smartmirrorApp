@@ -14,6 +14,7 @@ class UserModulesTableViewController: UITableViewController {
     var user: User!
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,6 +22,7 @@ class UserModulesTableViewController: UITableViewController {
         tableView.estimatedRowHeight = 120.0
         
     }
+    
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,11 +52,41 @@ class UserModulesTableViewController: UITableViewController {
         //Step 3: Configure cell
         cell.update(with: module)
         cell.showsReorderControl = false
-
+        
         //Step 4: Return cell
         return cell
     }
-    
+    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion) in
+            
+            
+            
+            //self.items.remove(at: indexPath.row)
+            let module=self.user.module[indexPath.row].dataToPass
+                        
+            Firestore.firestore().collection("user").document(self.user.id!).updateData([
+                "module": FieldValue.arrayRemove([module])
+            ]) { (error) in
+                if let error = error {
+                    // An error occurred
+                    print("Error updating the user modulos: \(error)")
+                } else {
+                    // Delete the item from the list
+                    self.user.module.remove(at: indexPath.row)
+                    // Update the table view
+                    tableView.deleteRows(at: [indexPath], with: .automatic)
+                }
+                
+                // Call the completion handler
+                completion(true)
+            }
+        }
+        deleteAction.image = UIImage(systemName: "trash")
+
+        let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+        return configuration
+    }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //self.performSegue(withIdentifier: "segueToPin", sender: users[indexPath.row])
     }

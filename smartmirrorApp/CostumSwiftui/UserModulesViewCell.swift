@@ -15,8 +15,14 @@ class UserModulesViewCell: UITableViewCell {
     @IBOutlet weak var xLabel: UILabel!
     @IBOutlet weak var yLabel: UILabel!
     
+    @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var UiImage: UIImageView!
+    var tableView: UITableView!
     override func awakeFromNib() {
         super.awakeFromNib()
+      
+    
+        
         // Initialization code
     }
 
@@ -27,11 +33,14 @@ class UserModulesViewCell: UITableViewCell {
     }
     
     func update(with module: Module) {
-        nameLabel.text = "Name: " + module.name
+        nameLabel.text = module.name
+        nameLabel.font = UIFont.boldSystemFont(ofSize: 18)
         widthLabel.text = "Width: " + String(module.size.width)
         heightLabel.text = "Height: " + String(module.size.height)
         xLabel.text = "X: " + String(module.position.x)
         yLabel.text = "Y: " + String(module.position.y)
+        UiImage.image = UIImage(named:String(module.name) ?? "default")
     }
 
+    
 }

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "C668E967-B8CE-4589-8A97-F60310002C42"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E78C7B39-245D-4580-A2C4-8D6A1E9684A5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "smartmirrorApp/SelfieViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "didTapButton()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "857419CE-BEE9-4F12-AAF4-21C36065F5E8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "smartmirrorApp/UserModulesTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "UserModulesTableViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "857419CE-BEE9-4F12-AAF4-21C36065F5E8 - 8f063f65853feed3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "smartmirrorApp.UserModulesTableViewController.deleteButton.getter : Swift.Optional&lt;__C.UIButton&gt;"
+                  moduleName = "smartmirrorApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/formando/Desktop/SmartMirror/smartmirrorApp/smartmirrorApp/UserModulesTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "85">
+               </Location>
+               <Location
+                  uuid = "857419CE-BEE9-4F12-AAF4-21C36065F5E8 - c00ccb87ee2c0efb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "smartmirrorApp.UserModulesTableViewController.deleteButton.setter : Swift.Optional&lt;__C.UIButton&gt;"
+                  moduleName = "smartmirrorApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/formando/Desktop/SmartMirror/smartmirrorApp/smartmirrorApp/UserModulesTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "136">
+               </Location>
+               <Location
+                  uuid = "857419CE-BEE9-4F12-AAF4-21C36065F5E8 - 19c2ff5fd16e36d9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "smartmirrorApp.UserModulesTableViewController.deleteButton.modify : Swift.Optional&lt;__C.UIButton&gt;"
+                  moduleName = "smartmirrorApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/formando/Desktop/SmartMirror/smartmirrorApp/smartmirrorApp/UserModulesTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "857419CE-BEE9-4F12-AAF4-21C36065F5E8 - ef9840987c5e478d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "smartmirrorApp.UserModulesTableViewController.deleteButton.modify : Swift.Optional&lt;__C.UIButton&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "smartmirrorApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/formando/Desktop/SmartMirror/smartmirrorApp/smartmirrorApp/UserModulesTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "26">
+               </Location>
+               <Location
+                  uuid = "857419CE-BEE9-4F12-AAF4-21C36065F5E8 - 67d6d4b14ceb06e7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "smartmirrorApp.UserModulesTableViewController.init(style: __C.UITableViewStyle) -&gt; smartmirrorApp.UserModulesTableViewController"
+                  moduleName = "smartmirrorApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/formando/Desktop/SmartMirror/smartmirrorApp/smartmirrorApp/UserModulesTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "106">
+               </Location>
+               <Location
+                  uuid = "857419CE-BEE9-4F12-AAF4-21C36065F5E8 - b064b76dada33313"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "smartmirrorApp.UserModulesTableViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; smartmirrorApp.UserModulesTableViewController"
+                  moduleName = "smartmirrorApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/formando/Desktop/SmartMirror/smartmirrorApp/smartmirrorApp/UserModulesTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "152">
+               </Location>
+               <Location
+                  uuid = "857419CE-BEE9-4F12-AAF4-21C36065F5E8 - d8f6f38155286424"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "smartmirrorApp.UserModulesTableViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;smartmirrorApp.UserModulesTableViewController&gt;"
+                  moduleName = "smartmirrorApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/formando/Desktop/SmartMirror/smartmirrorApp/smartmirrorApp/UserModulesTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "109">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CF0AB828-23DA-44D3-B380-31BB784EB52A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "smartmirrorApp/UserModulesTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

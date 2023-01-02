@@ -15,13 +15,15 @@ class SelfieViewController: UIViewController {
     @IBOutlet var ImageView: UIImageView!
     @IBOutlet var button: UIButton!
     @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var logoutButton: UIButton!
+    
     
     var user: User!
     private let storage = Storage.storage().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationItem.title="Settings"
         ImageView.backgroundColor = .secondarySystemBackground
         button.backgroundColor = .systemBlue
         button.setTitleColor(.white,for: .normal)
@@ -30,8 +32,10 @@ class SelfieViewController: UIViewController {
         saveButton.backgroundColor = .systemBlue
         saveButton.setTitleColor(.white,for: .normal)
         saveButton.setTitle("Save selfie", for: .normal)
-        
-        //mostrar a imagem caso exista
+        logoutButton.setTitle("Logout", for: .normal)
+        logoutButton.backgroundColor = .red
+        logoutButton.setTitleColor(.white,for: .normal)
+                //mostrar a imagem caso exista
         if(!(user.imageFRurl?.isEmpty ?? true)){
             ImageView.loadFrom(URLAddress: user.imageFRurl!)
         }
@@ -45,7 +49,15 @@ class SelfieViewController: UIViewController {
         picker.delegate = self
         present(picker, animated:true)
     }
-
+    
+    @IBAction func logoutButtonTapped(_ sender: Any) {
+        let loginViewController=UIStoryboard(name:"Main",bundle:nil).instantiateViewController(withIdentifier: "UsersViewController")
+        if let sceneDelegate=view.window?.windowScene?.delegate as? SceneDelegate,
+           let window=sceneDelegate.window{
+            window.rootViewController=loginViewController
+        }
+    }
+    
     @IBAction func didTapSaveButton(){
         guard let imageData = ImageView.image?.pngData()
         else{
@@ -101,8 +113,15 @@ class SelfieViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "ShowLoging") {
+            let secondView = segue.destination as! UsersTableViewController
+            
+        }
+    }
 }
+
+
 
 extension SelfieViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -138,3 +157,5 @@ extension UIImageView {
         }
     }
 }
+
+
