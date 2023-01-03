@@ -13,6 +13,8 @@ class AddNewModuleTableViewController: UITableViewController {
 
     var user: User!
     var module: Module!
+    var isUpdate: Bool = false
+    var rowIndex:Int!
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
     override func viewDidLoad() {
@@ -53,9 +55,11 @@ class AddNewModuleTableViewController: UITableViewController {
         case 2:
             cell.update(name: "X", value: String(module.position.x))
             cell.textfield.keyboardType = UIKeyboardType.numberPad
+            
         case 3:
             cell.update(name: "Y", value: String(module.position.y))
             cell.textfield.keyboardType = UIKeyboardType.numberPad
+            
         default:
             let nb = indexPath.row - 4
             cell.update(name: Array(self.module.config.keys)[nb], value: Array(self.module.config.values)[nb])
@@ -67,22 +71,40 @@ class AddNewModuleTableViewController: UITableViewController {
         guard segue.identifier == "unwindFromAddModule" else { return }
         
         var cells = getAllCells()
-        
+        let moduleDelete=module
         //2 = X
         module.position.x = Int((cells[2] as! FieldToAddModuleViewCell).textfield.text ?? "") ?? 0
         //3 = Y
-        module.position.x = Int((cells[3] as! FieldToAddModuleViewCell).textfield.text ?? "") ?? 0
+        module.position.y = Int((cells[3] as! FieldToAddModuleViewCell).textfield.text ?? "") ?? 0
        
         //configs remove first 4 elements so it only leaves the config cells
         cells.removeFirst(4)
         for cell in cells{
             module.config.updateValue((cell as! FieldToAddModuleViewCell).textfield.text ?? "", forKey: (cell as! FieldToAddModuleViewCell).label.text ?? "")
         }
+    
         
-        user.module.append(module)
+        if isUpdate {
+           
+            
+            Firestore.firestore().collection("user").document(self.user.id!).updateData([
+                "module": FieldValue.arrayRemove([moduleDelete?.dataToPass])
+            ]) { (error) in
+                if let error = error {
+                    // An error occurred
+                    print("Error updating the user modulos: \(error)")
+                } else {
+                    // Delete the item from the list
+                    self.user.module.remove(at: self.rowIndex)
+                    // Update the table vie
+                }
+                
+            }}
+        self.user.module.append(module)
+            //add to firebase the new module
+            
         
-        //add to firebase the new module
-        Firestore.firestore().collection("user").document(user.id!).updateData([
+        Firestore.firestore().collection("user").document(self.user.id!).updateData([
             "module": FieldValue.arrayUnion([self.module.dataToPass])
         ])
     }

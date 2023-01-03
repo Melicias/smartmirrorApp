@@ -88,14 +88,17 @@ class UserModulesTableViewController: UITableViewController {
         return configuration
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //self.performSegue(withIdentifier: "segueToPin", sender: users[indexPath.row])
+        self.performSegue(withIdentifier: "segueToEditModule", sender: indexPath.row)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "segueToPin") {
-            let secondView = segue.destination as! pinCodeController
-            let object = sender as! User
-            secondView.user = object
+        if (segue.identifier == "segueToEditModule") {
+            let secondView = segue.destination as! AddNewModuleTableViewController
+            let rowIndex = sender as! Int
+            secondView.module = user.module[rowIndex]
+            secondView.user=self.user
+            secondView.isUpdate=true
+            secondView.rowIndex = rowIndex
         }
     }
     
