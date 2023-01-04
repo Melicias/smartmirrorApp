@@ -71,7 +71,6 @@ class AddNewModuleTableViewController: UITableViewController {
         guard segue.identifier == "unwindFromAddModule" else { return }
         
         var cells = getAllCells()
-        let moduleDelete=module
         //2 = X
         module.position.x = Int((cells[2] as! FieldToAddModuleViewCell).textfield.text ?? "") ?? 0
         //3 = Y
@@ -85,28 +84,35 @@ class AddNewModuleTableViewController: UITableViewController {
     
         
         if isUpdate {
-           
-            
+            let mod : Module = self.user.module[self.rowIndex]
+            self.user.module[self.rowIndex] = module
             Firestore.firestore().collection("user").document(self.user.id!).updateData([
-                "module": FieldValue.arrayRemove([moduleDelete?.dataToPass])
+                "module": modulesDataToSend(modules: self.user.module)
             ]) { (error) in
                 if let error = error {
                     // An error occurred
+                    self.user.module[self.rowIndex] = mod
                     print("Error updating the user modulos: \(error)")
                 } else {
-                    // Delete the item from the list
-                    self.user.module.remove(at: self.rowIndex)
                     // Update the table vie
                 }
-                
-            }}
-        self.user.module.append(module)
+            }
+        }else{
             //add to firebase the new module
-            
+            self.user.module.append(module)
+            Firestore.firestore().collection("user").document(self.user.id!).updateData([
+                "module": modulesDataToSend(modules: self.user.module)//FieldValue.arrayUnion([self.module.dataToPass])
+            ])
+        }
+    }
+    
+    func modulesDataToSend(modules: Array<Module>) -> [[String:Any]] {
+        var mods: [[String:Any]] = []
+        for module in modules{
+            mods.append(module.dataToPass)
+        }
         
-        Firestore.firestore().collection("user").document(self.user.id!).updateData([
-            "module": FieldValue.arrayUnion([self.module.dataToPass])
-        ])
+        return mods
     }
     
     /*func addUser(user: User) {
