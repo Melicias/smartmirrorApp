@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Pin Code Controller-->
+        <!--Login-->
         <scene sceneID="sus-qy-wZ9">
             <objects>
                 <viewController id="hsz-ll-02i" customClass="pinCodeController" customModule="smartmirrorApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -33,14 +33,14 @@
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pin code" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="3E2-6E-fb4">
                                 <rect key="frame" x="16" y="162" width="358" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YWh-6x-4nG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Nmi-oe-24q">
+                    <navigationItem key="navigationItem" title="Login" id="Nmi-oe-24q">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="vIt-v5-epc">
                             <connections>
                                 <segue destination="GK8-Ky-aUF" kind="unwind" unwindAction="unwindToUsersTableViewWithSegue:" id="Kst-qj-EMV"/>
@@ -63,7 +63,7 @@
             </objects>
             <point key="canvasLocation" x="243.07692307692307" y="-751.42180094786727"/>
         </scene>
-        <!--Widgets-->
+        <!--My widget-->
         <scene sceneID="Njl-EN-K6y">
             <objects>
                 <viewController id="WSE-BT-OIU" customClass="UserModulesTableViewController" customModule="smartmirrorApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -84,7 +84,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZOb-pv-9ml">
-                                            <rect key="frame" x="149" y="19" width="350" height="21"/>
+                                            <rect key="frame" x="149" y="19" width="221" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -132,14 +132,14 @@
                         </prototypes>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Widgets" image="list.clipboard.fill" catalog="system" id="mQm-i5-YpV"/>
-                    <navigationItem key="navigationItem" id="ARp-UT-A3O"/>
+                    <navigationItem key="navigationItem" title="My widget" id="ARp-UT-A3O"/>
                     <connections>
                         <segue destination="W4r-2J-sQk" kind="show" identifier="segueToEditModule" id="dDM-te-rU8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FyE-I4-khh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2588" y="-1450"/>
+            <point key="canvasLocation" x="2587.6923076923076" y="-1450.2369668246445"/>
         </scene>
         <!--Profiles-->
         <scene sceneID="02r-ht-1eR">
@@ -289,10 +289,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <navigationBar contentMode="scaleToFill" id="b5D-qR-Eb7">
-                                <rect key="frame" x="-3" y="47" width="388" height="44"/>
+                                <rect key="frame" x="-3" y="47" width="386" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Settings" id="hG4-xL-CTn"/>
+                                    <navigationItem id="hG4-xL-CTn"/>
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uoi-xO-GcM">
@@ -328,7 +328,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="RCZ-0Y-prd"/>
-                    <navigationItem key="navigationItem" title="Settings" id="P73-ng-08T"/>
+                    <navigationItem key="navigationItem" id="P73-ng-08T"/>
                     <connections>
                         <outlet property="ImageView" destination="5tm-qt-QNJ" id="WZh-MY-nw2"/>
                         <outlet property="button" destination="Uoi-xO-GcM" id="G6H-X9-F39"/>
@@ -376,12 +376,12 @@
             </objects>
             <point key="canvasLocation" x="-1634" y="-47"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Login-->
         <scene sceneID="ZJI-Ay-3QQ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lqk-98-oMQ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="qv3-fH-Yci"/>
+                    <navigationItem key="navigationItem" title="Login" id="qv3-fH-Yci"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JAD-fl-Fq5">
                         <rect key="frame" x="0.0" y="47" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -416,10 +416,10 @@
             </objects>
             <point key="canvasLocation" x="1832" y="-751"/>
         </scene>
-        <!--New-->
+        <!--Availability Widget-->
         <scene sceneID="dmw-05-gl6">
             <objects>
-                <tableViewController id="ZAX-Ax-q2U" customClass="ModulesTableViewController" customModule="smartmirrorApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Availability Widget" id="ZAX-Ax-q2U" customClass="ModulesTableViewController" customModule="smartmirrorApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="qHJ-Rr-66b">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -433,35 +433,25 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Odf-Zw-Waw">
-                                            <rect key="frame" x="20" y="11" width="350" height="21"/>
+                                            <rect key="frame" x="147" y="19" width="350" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Width:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kcn-Vx-RC6">
-                                            <rect key="frame" x="20" y="40" width="110" height="21"/>
+                                            <rect key="frame" x="147" y="48" width="110" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Height: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1Q-z7-Voa">
-                                            <rect key="frame" x="20" y="69" width="110" height="21"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="WDD-rT-mwb">
+                                            <rect key="frame" x="32" y="19" width="87" height="77"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="x: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BxP-HZ-CDx">
-                                            <rect key="frame" x="174" y="40" width="55" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="y: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EK2-T7-YOI">
-                                            <rect key="frame" x="174" y="68" width="55" height="21"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Height:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dY9-kd-Z6b">
+                                            <rect key="frame" x="147" y="74" width="110" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -470,8 +460,9 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="moduleHeight" destination="d1Q-z7-Voa" id="taf-V9-Lah"/>
-                                    <outlet property="moduleName" destination="Odf-Zw-Waw" id="6Yp-eb-Izt"/>
+                                    <outlet property="moduleHeight" destination="dY9-kd-Z6b" id="0jZ-hl-ih2"/>
+                                    <outlet property="moduleImage" destination="WDD-rT-mwb" id="XVB-VR-hQN"/>
+                                    <outlet property="moduleName" destination="Odf-Zw-Waw" id="3Jp-6P-7Rj"/>
                                     <outlet property="moduloWidth" destination="Kcn-Vx-RC6" id="XDF-oY-jcP"/>
                                 </connections>
                             </tableViewCell>
@@ -482,7 +473,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="New" image="plus.square.fill.on.square.fill" catalog="system" selectedImage="plus.square.fill.on.square.fill" id="bdQ-Ii-oKc"/>
-                    <navigationItem key="navigationItem" id="weR-0w-0yg"/>
+                    <navigationItem key="navigationItem" title="Availability Widget" id="weR-0w-0yg"/>
                     <connections>
                         <outlet property="tableView" destination="qHJ-Rr-66b" id="1bg-Zn-vkf"/>
                         <outlet property="tableViewModules" destination="qHJ-Rr-66b" id="gqg-Za-1Ly"/>
@@ -491,7 +482,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0fU-gf-83L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2588" y="-751"/>
+            <point key="canvasLocation" x="2587.6923076923076" y="-751.42180094786727"/>
         </scene>
         <!--Add module-->
         <scene sceneID="lJW-ky-ax5">
@@ -536,12 +527,15 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Add module" id="CtV-qB-SY2">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="M1w-uw-795">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="M1w-uw-795">
                             <connections>
                                 <segue destination="HnY-TM-6bC" kind="unwind" identifier="unwindFromAddModule" unwindAction="unwindToAllModules:" id="qnb-QP-Oat"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="saveEditButton" destination="M1w-uw-795" id="4v2-F4-7wY"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G9G-YZ-OUZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="HnY-TM-6bC" userLabel="Exit" sceneMemberID="exit"/>
@@ -550,9 +544,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="dDM-te-rU8"/>
+        <segue reference="0a2-z0-sRJ"/>
         <segue reference="8zu-Wa-AnW"/>
-        <segue reference="fG6-TU-2dw"/>
+        <segue reference="7Ua-Mb-Vz0"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="gear" catalog="system" width="128" height="122"/>

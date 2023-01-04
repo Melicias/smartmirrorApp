@@ -21,11 +21,15 @@ class UITabBarControllerMainViewController: UITabBarController {
         self.navigationItem.setHidesBackButton(true, animated: false)
 
         getModules()
+
+        self.title = ""
         
         let usermodules = self.viewControllers![0] as! UserModulesTableViewController
+        usermodules.title = "My widgets"
         usermodules.user = user
         
         let modu = self.viewControllers![1] as! ModulesTableViewController
+        usermodules.title = "Availability widgets"
         modu.modules = modules
         modu.user = user
         

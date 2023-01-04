@@ -9,6 +9,7 @@ import UIKit
 
 class ModulesViewCell: UITableViewCell {
 
+    @IBOutlet weak var moduleImage: UIImageView!
     @IBOutlet weak var moduleHeight: UILabel!
     @IBOutlet weak var moduloWidth: UILabel!
     @IBOutlet weak var moduleName: UILabel!
@@ -27,5 +28,6 @@ class ModulesViewCell: UITableViewCell {
         moduleName.text = "Name: " + module.name
         moduloWidth.text = "Width: " + String(module.size.width)
         moduleHeight.text = "Height: " + String(module.size.height)
+        moduleImage.image = UIImage(named:String(module.name) ?? "default")
     }
 }

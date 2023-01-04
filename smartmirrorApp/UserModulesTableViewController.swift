@@ -21,6 +21,10 @@ class UserModulesTableViewController: UITableViewController {
         tableView.rowHeight = 120.0
         tableView.estimatedRowHeight = 120.0
         
+        if let tabController = self.parent as? UITabBarControllerMainViewController {
+            tabController.navigationItem.title = "My widgets"
+        }
+        
     }
     
     

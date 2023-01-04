@@ -15,11 +15,16 @@ class AddNewModuleTableViewController: UITableViewController {
     var module: Module!
     var isUpdate: Bool = false
     var rowIndex:Int!
+    @IBOutlet weak var saveEditButton: UIBarButtonItem!
     
-    @IBOutlet weak var saveButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = module.name
+        if(isUpdate){
+            saveEditButton.title = "Edit"
+        }else{
+            saveEditButton.title = "Save"
+        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

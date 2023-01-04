@@ -23,7 +23,9 @@ class SelfieViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title="Settings"
+        if let tabController = self.parent as? UITabBarControllerMainViewController {
+            tabController.navigationItem.title = "Settings"
+        }
         ImageView.backgroundColor = .secondarySystemBackground
         button.backgroundColor = .systemBlue
         button.setTitleColor(.white,for: .normal)
@@ -37,8 +39,22 @@ class SelfieViewController: UIViewController {
         logoutButton.setTitleColor(.white,for: .normal)
                 //mostrar a imagem caso exista
         if(!(user.imageFRurl?.isEmpty ?? true)){
-            ImageView.loadFrom(URLAddress: user.imageFRurl!)
+            //ImageView.loadFrom(URLAddress: user.imageFRurl!)
+            setImageFromStringrURL(stringUrl: user.imageFRurl!)
         }
+    }
+    
+    func setImageFromStringrURL(stringUrl: String) {
+        if let url = URL(string:stringUrl) {
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            // Error handling...
+            guard let imageData = data else { return }
+            DispatchQueue.main.async {
+                let image = UIImage(data: imageData)
+                self.ImageView.image = image
+            }
+        }.resume()
+      }
     }
     
     @IBAction func didTapButton(){
