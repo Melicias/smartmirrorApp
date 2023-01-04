@@ -35,6 +35,9 @@ class ModulesTableViewController: UITableViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        if let tabController = self.parent as? UITabBarControllerMainViewController {
+            tabController.navigationItem.title = "Availability widgets"
+        }
         super.viewWillAppear(animated)
         tableView.reloadData()
     }

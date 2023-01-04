@@ -44,6 +44,13 @@ class SelfieViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if let tabController = self.parent as? UITabBarControllerMainViewController {
+            tabController.navigationItem.title = "Settings"
+        }
+        super.viewWillAppear(animated)
+    }
+    
     func setImageFromStringrURL(stringUrl: String) {
         if let url = URL(string:stringUrl) {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -84,9 +91,7 @@ class SelfieViewController: UIViewController {
         //getUrl
         //save url
         
-        storage.child("images/" + (user!.id ?? "tes") + ".png").putData(imageData,
-                                                                        metadata: nil,
-                                                                        completion: { _, error in
+        storage.child("images/" + (user!.id ?? "tes") + ".png").putData(imageData,metadata: nil, completion: { _, error in
             guard error == nil else{
                 print("failed to upload")
                 return
@@ -113,9 +118,6 @@ class SelfieViewController: UIViewController {
                             ])
                         }
                     }
-                
-                
-                print(urlString)
             })
         })
     }

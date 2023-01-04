@@ -25,7 +25,8 @@ class ModulesViewCell: UITableViewCell {
     }
 
     func update(with module: Module) {
-        moduleName.text = "Name: " + module.name
+        moduleName.text = module.name
+        moduleName.font = UIFont.boldSystemFont(ofSize: 18)
         moduloWidth.text = "Width: " + String(module.size.width)
         moduleHeight.text = "Height: " + String(module.size.height)
         moduleImage.image = UIImage(named:String(module.name) ?? "default")

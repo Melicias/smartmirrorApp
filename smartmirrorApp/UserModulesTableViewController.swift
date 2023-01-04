@@ -26,6 +26,9 @@ class UserModulesTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        if let tabController = self.parent as? UITabBarControllerMainViewController {
+            tabController.navigationItem.title = "My widgets"
+        }
         super.viewWillAppear(animated)
         tableView.reloadData()
     }
@@ -56,27 +59,25 @@ class UserModulesTableViewController: UITableViewController {
         //Step 4: Return cell
         return cell
     }
+    
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion) in
-
             //self.items.remove(at: indexPath.row)
-            let module=self.user.module[indexPath.row].dataToPass
+            let module : Module = self.user.module[indexPath.row]
+            // Delete the item from the list
             self.user.module.remove(at: indexPath.row)
-                        
             Firestore.firestore().collection("user").document(self.user.id!).updateData([
                 "module": Module.modulesDataToSend(modules: self.user.module)
             ]) { (error) in
                 if let error = error {
                     // An error occurred
+                    self.user.module.insert(module, at: indexPath.row)
                     print("Error updating the user modulos: \(error)")
                 } else {
-                    // Delete the item from the list
-                    //self.user.module.remove(at: indexPath.row)
                     // Update the table view
                     tableView.deleteRows(at: [indexPath], with: .automatic)
                 }
-                
                 // Call the completion handler
                 completion(true)
             }

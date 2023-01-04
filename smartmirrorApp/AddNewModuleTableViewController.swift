@@ -19,10 +19,12 @@ class AddNewModuleTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = module.name
+        
         if(isUpdate){
+            navigationItem.title = "Edit " + module.name
             saveEditButton.title = "Edit"
         }else{
+            navigationItem.title = module.name
             saveEditButton.title = "Save"
         }
         // Uncomment the following line to preserve selection between presentations
