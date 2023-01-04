@@ -30,4 +30,13 @@ class Module:Codable{
         self.position = position
         self.size = size
     }
+    
+    static func modulesDataToSend(modules: Array<Module>) -> [[String:Any]] {
+        var mods: [[String:Any]] = []
+        for module in modules{
+            mods.append(module.dataToPass)
+        }
+        
+        return mods
+    }
 }

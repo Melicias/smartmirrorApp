@@ -92,7 +92,7 @@ class AddNewModuleTableViewController: UITableViewController {
             let mod : Module = self.user.module[self.rowIndex]
             self.user.module[self.rowIndex] = module
             Firestore.firestore().collection("user").document(self.user.id!).updateData([
-                "module": modulesDataToSend(modules: self.user.module)
+                "module": Module.modulesDataToSend(modules: self.user.module)
             ]) { (error) in
                 if let error = error {
                     // An error occurred
@@ -106,19 +106,11 @@ class AddNewModuleTableViewController: UITableViewController {
             //add to firebase the new module
             self.user.module.append(module)
             Firestore.firestore().collection("user").document(self.user.id!).updateData([
-                "module": modulesDataToSend(modules: self.user.module)//FieldValue.arrayUnion([self.module.dataToPass])
+                "module": Module.modulesDataToSend(modules: self.user.module)//modulesDataToSend(modules: self.user.module)//FieldValue.arrayUnion([self.module.dataToPass])
             ])
         }
     }
     
-    func modulesDataToSend(modules: Array<Module>) -> [[String:Any]] {
-        var mods: [[String:Any]] = []
-        for module in modules{
-            mods.append(module.dataToPass)
-        }
-        
-        return mods
-    }
     
     /*func addUser(user: User) {
         let db = Firestore.firestore()

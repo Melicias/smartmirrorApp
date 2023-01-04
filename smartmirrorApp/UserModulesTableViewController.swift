@@ -12,9 +12,7 @@ import FirebaseFirestore
 class UserModulesTableViewController: UITableViewController {
     
     var user: User!
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,8 +24,6 @@ class UserModulesTableViewController: UITableViewController {
         }
         
     }
-    
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -63,21 +59,20 @@ class UserModulesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion) in
-            
-            
-            
+
             //self.items.remove(at: indexPath.row)
             let module=self.user.module[indexPath.row].dataToPass
+            self.user.module.remove(at: indexPath.row)
                         
             Firestore.firestore().collection("user").document(self.user.id!).updateData([
-                "module": FieldValue.arrayRemove([module])
+                "module": Module.modulesDataToSend(modules: self.user.module)
             ]) { (error) in
                 if let error = error {
                     // An error occurred
                     print("Error updating the user modulos: \(error)")
                 } else {
                     // Delete the item from the list
-                    self.user.module.remove(at: indexPath.row)
+                    //self.user.module.remove(at: indexPath.row)
                     // Update the table view
                     tableView.deleteRows(at: [indexPath], with: .automatic)
                 }
