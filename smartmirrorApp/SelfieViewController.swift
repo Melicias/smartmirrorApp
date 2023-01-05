@@ -16,7 +16,7 @@ class SelfieViewController: UIViewController {
     @IBOutlet var button: UIButton!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
-    
+    @IBOutlet weak var deleteButton: UIButton!
     
     var user: User!
     private let storage = Storage.storage().reference()
@@ -79,6 +79,10 @@ class SelfieViewController: UIViewController {
            let window=sceneDelegate.window{
             window.rootViewController=loginViewController
         }
+    }
+    
+    @IBAction func deleteButtonTapped(_ sender: Any) {
+        
     }
     
     @IBAction func didTapSaveButton(){
