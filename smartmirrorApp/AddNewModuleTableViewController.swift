@@ -19,7 +19,7 @@ class AddNewModuleTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.tableView.isScrollEnabled=false
         if(isUpdate){
             navigationItem.title = "Edit " + module.name
             saveEditButton.title = "Edit"

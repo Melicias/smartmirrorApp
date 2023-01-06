@@ -16,6 +16,7 @@ class createNewUserViewController: UITableViewController {
     @IBOutlet weak var textFieldPin: UITextField!
     
     override func viewDidLoad() {
+        self.tableView.isScrollEnabled=false
         super.viewDidLoad()
         textFieldName.becomeFirstResponder()
     }

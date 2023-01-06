@@ -24,6 +24,7 @@ class ModulesTableViewController: UITableViewController {
         self.tableView.delegate = self
         self.tableView.reloadData()
         
+        
         if let tabController = self.parent as? UITabBarControllerMainViewController {
             tabController.navigationItem.title = "Availability widgets"
         }

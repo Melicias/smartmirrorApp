@@ -35,17 +35,22 @@ class SelfieViewController: UIViewController {
         saveButton.setTitleColor(.white,for: .normal)
         saveButton.setTitle("Save selfie", for: .normal)
         
-        deleteButton.setTitle("Logout", for: .normal)
-        deleteButton.backgroundColor = .red
-        deleteButton.setTitleColor(.white,for: .normal)
+        deleteButton.setTitle("Delete Account", for: .normal)
+        deleteButton.backgroundColor = .white
+        deleteButton.setTitleColor(.red,for: .normal)
         
         logoutButton.setTitle("Logout", for: .normal)
         logoutButton.backgroundColor = .red
         logoutButton.setTitleColor(.white,for: .normal)
+        
+        
                 //mostrar a imagem caso exista
         if(!(user.imageFRurl?.isEmpty ?? true)){
             //ImageView.loadFrom(URLAddress: user.imageFRurl!)
             setImageFromStringrURL(stringUrl: user.imageFRurl!)
+        }else{
+            let newImage = UIImage(named: "Default-user")
+            self.ImageView.image=newImage
         }
     }
     
@@ -87,7 +92,21 @@ class SelfieViewController: UIViewController {
     }
     
     @IBAction func deleteButtonTapped(_ sender: Any) {
-        
+        let alert = UIAlertController(title: "Delete Account", message: "Are you sure you want to delete your account?", preferredStyle: .alert)
+            let yesButton = UIAlertAction(title: "Yes", style: .destructive) { _ in
+                Firestore.firestore().collection("user").document(self.user.id!).delete() { error in
+                    if let error = error {
+                        print("Error deleting user: \(error)")
+                    } else {
+                        // reutilizar a fun que da logout.
+                        self.logoutButtonTapped(nil as Any?)
+                    }
+                }
+            }
+            let noButton = UIAlertAction(title: "No", style: .cancel, handler: nil)
+            alert.addAction(yesButton)
+            alert.addAction(noButton)
+            present(alert, animated: true, completion: nil)
     }
     
     @IBAction func didTapSaveButton(){
