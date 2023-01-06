@@ -49,13 +49,27 @@ class UsersTableViewController: UITableViewController {
                     self.addButton.isHidden = true
                 }
                 self.tableView.reloadData()
+                self.showMensageNoDataOnTable()
             }
+        }
+    }
+    
+    func showMensageNoDataOnTable(){
+        if users.count == 0{
+            let emptyLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height))
+            emptyLabel.text = "Without profiles"
+            emptyLabel.textAlignment = NSTextAlignment.center
+            self.tableView.backgroundView = emptyLabel
+            self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        }else{
+            self.tableView.backgroundView = nil
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
+        showMensageNoDataOnTable()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

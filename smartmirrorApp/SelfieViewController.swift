@@ -36,7 +36,6 @@ class SelfieViewController: UIViewController {
         saveButton.setTitle("Save selfie", for: .normal)
         
         deleteButton.setTitle("Delete Account", for: .normal)
-        deleteButton.backgroundColor = .white
         deleteButton.setTitleColor(.red,for: .normal)
         
         logoutButton.setTitle("Logout", for: .normal)

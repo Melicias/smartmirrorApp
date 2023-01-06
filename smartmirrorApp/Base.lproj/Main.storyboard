@@ -289,7 +289,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <navigationBar contentMode="scaleToFill" id="b5D-qR-Eb7">
-                                <rect key="frame" x="-5" y="47" width="386" height="44"/>
+                                <rect key="frame" x="-6" y="47" width="386" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem id="hG4-xL-CTn"/>
@@ -314,7 +314,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anW-df-gCD" colorLabel="IBBuiltInLabel-Red">
-                                <rect key="frame" x="16" y="577" width="358" height="40"/>
+                                <rect key="frame" x="16" y="555" width="358" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Logout">
                                     <backgroundConfiguration key="background"/>
@@ -324,7 +324,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcQ-Uv-RLU" colorLabel="IBBuiltInLabel-Red">
-                                <rect key="frame" x="74" y="688" width="242" height="40"/>
+                                <rect key="frame" x="120" y="661" width="151" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Delete account">
                                     <backgroundConfiguration key="background"/>

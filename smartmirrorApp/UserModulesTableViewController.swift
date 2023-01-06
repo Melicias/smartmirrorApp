@@ -22,7 +22,18 @@ class UserModulesTableViewController: UITableViewController {
         if let tabController = self.parent as? UITabBarControllerMainViewController {
             tabController.navigationItem.title = "My widgets"
         }
-        
+    }
+    
+    func showMensageNoDataOnTable(){
+        if user.module.count == 0{
+            let emptyLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height))
+            emptyLabel.text = "No widgets"
+            emptyLabel.textAlignment = NSTextAlignment.center
+            self.tableView.backgroundView = emptyLabel
+            self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        }else{
+            self.tableView.backgroundView = nil
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,6 +42,7 @@ class UserModulesTableViewController: UITableViewController {
         }
         super.viewWillAppear(animated)
         tableView.reloadData()
+        showMensageNoDataOnTable()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -63,7 +75,10 @@ class UserModulesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion) in
-            //self.items.remove(at: indexPath.row)
+            //self.items.remove(at: indexPath.row)´
+            if (self.user.module.count < indexPath.row){
+                return
+            }
             let module : Module = self.user.module[indexPath.row]
             // Delete the item from the list
             self.user.module.remove(at: indexPath.row)
@@ -77,6 +92,7 @@ class UserModulesTableViewController: UITableViewController {
                 } else {
                     // Update the table view
                     tableView.deleteRows(at: [indexPath], with: .automatic)
+                    self.showMensageNoDataOnTable()
                 }
                 // Call the completion handler
                 completion(true)
